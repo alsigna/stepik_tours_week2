@@ -6,13 +6,13 @@ from django.shortcuts import render
 
 
 def custom_404(request, exception):
-    """Custom handler for 404 status code"""
+    """Custom handler for 404 status code."""
 
     return HttpResponseNotFound("Page Not Found")
 
 
 def custom_500(request):
-    """Custom handler for 500 status code"""
+    """Custom handler for 500 status code."""
 
     return HttpResponseServerError("Internal Server Error")
 
@@ -37,7 +37,7 @@ def main_view(request):
 
 
 def departure_view(request, dep_code):
-    """View for Main Page. Displays 6 random tours
+    """View for tours by departure.
 
     Args:
         dep_code (str): departure code
@@ -76,10 +76,10 @@ def departure_view(request, dep_code):
 
 
 def tour_view(request, tour_id):
-    """View for specifc tour page.
+    """View for specifc tour.
 
     Args:
-        tour_id (int): tour id
+        tour_id (int): tour identifier
 
     Raises:
         Http404: in case of un-existed tour
