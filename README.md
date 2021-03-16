@@ -1,1 +1,1 @@
-# stepik_tours_week2
+# Stepik Tours [week2] project

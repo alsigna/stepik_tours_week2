@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h1 class="display-5 mt-4">Летим {{ details.departure }}</h1>
+<p class="mb-4">Найдено {{ tours|length }} туров, от {{ details.price_min }} до {{ details.price_max }}
+    и от {{ details.night_min }} ночей до {{ details.night_max }} ночей</p>
+
+<!-- CARDS -->
+<div class="row mt-5">
+    {% for tour_id,tour in tours.items %}
+    {% include "tours/tour_card.html" with tour=tour tour_id=tour_id %}
+    {% endfor %}
+</div>
+
+{% endblock %}
