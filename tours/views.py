@@ -27,11 +27,9 @@ def main_view(request):
         request=request,
         template_name="tours/index.html",
         context={
-            "title": data.title,
             "subtitle": data.subtitle,
             "description": data.description,
             "tours": random_tours,
-            "departures": data.departures,
         },
     )
 
@@ -62,8 +60,6 @@ def departure_view(request, dep_code):
         template_name="tours/departure.html",
         context={
             "tours": tours_by_departure,
-            "title": data.title,
-            "departures": data.departures,
             "details": {
                 "departure": departure,
                 "price_max": max(prices),
@@ -96,7 +92,5 @@ def tour_view(request, tour_id):
             "tour": tour,
             "stars": range(int(tour["stars"])),
             "departure": data.departures[tour["departure"]],
-            "title": data.title,
-            "departures": data.departures,
         },
     )

@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
+{% load ru_pluralize %}
 
 {% block main %}
 
 <h1 class="display-5 mt-4">Летим {{ details.departure }}</h1>
-<p class="mb-4">Найдено {{ tours|length }} туров, от {{ details.price_min }} до {{ details.price_max }}
-    и от {{ details.night_min }} ночей до {{ details.night_max }} ночей</p>
+{% with tour_count=tours|length %}
+<p class="mb-4">Найдено {{ tour_count|ru_pluralize:'тур,тура,туров' }}, от {{ details.price_min }} до
+    {{ details.price_max }} и от {{ details.night_min|ru_pluralize:'ночи,ночей,ночей' }} до
+    {{ details.night_max|ru_pluralize:'ночи,ночей,ночей' }}</p>
+{% endwith %}
 
 <!-- CARDS -->
 <div class="row mt-5">
