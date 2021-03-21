@@ -16,3 +16,8 @@ def ru_pluralize(value, arg="дурак,дурака,дураков"):
         return f"{number} {args[1]}"
     else:
         return f"{number} {args[2]}"
+
+
+@register.filter
+def num_to_range(value):
+    return range(int(value))

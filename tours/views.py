@@ -90,7 +90,6 @@ def tour_view(request, tour_id):
         template_name="tours/tour.html",
         context={
             "tour": tour,
-            "stars": range(int(tour["stars"])),
             "departure": data.departures[tour["departure"]],
         },
     )
